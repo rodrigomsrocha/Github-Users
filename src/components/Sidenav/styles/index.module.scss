@@ -1,0 +1,17 @@
+.container {
+  min-height: 100vh;
+  grid-area: sidenav;
+  background: #161b22;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .imgContainer {
+    width: 250px;
+    align-self: center;
+    margin-bottom: 2rem;
+    img {
+      width: 100%;
+    }
+  }
+}

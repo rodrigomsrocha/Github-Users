@@ -1,7 +1,11 @@
+import Sidenav from "./components/Sidenav/index";
+
+import styles from "./styles/app.module.scss";
+
 function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className={styles.container}>
+      <Sidenav />
     </div>
   );
 }
