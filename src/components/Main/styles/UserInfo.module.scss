@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  padding: 1rem;
+  border: 1px solid #21262d;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  img {
+    width: 200px;
+    border-radius: 50%;
+  }
+  .info {
+    margin-left: 2rem;
+    color: #f0f6fc;
+    h2 {
+      color: #388bfd;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #388bfd;
+      + p {
+        margin-bottom: 2rem;
+      }
+    }
+    p {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

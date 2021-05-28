@@ -1,0 +1,33 @@
+.container {
+  padding: 1rem;
+  border: 1px solid #21262d;
+  border-radius: 4px;
+  background: #161b22;
+  color: #f0f6fc;
+  margin-bottom: 2rem;
+  a {
+    text-decoration: none;
+    h3 {
+      position: relative;
+      color: #388bfd;
+      font-size: 1.5rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 2px;
+        background-color: #388bfd;
+        transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      &:hover::before {
+        left: 0;
+        right: auto;
+        width: 100%;
+      }
+    }
+  }
+}
