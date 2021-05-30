@@ -1,24 +1,36 @@
 import React from "react";
+import { UsernameContext } from "../../context/UsernameContext";
+import { useFetch } from "../../hooks/useFetch";
+import Loading from "../Loading";
 
 import styles from "./styles/UserInfo.module.scss";
 
 const UserInfo = () => {
+  const { username } = React.useContext(UsernameContext);
+  const { data } = useFetch(`https://api.github.com/users/${username}`);
+
   return (
     <div className={styles.container}>
-      <img src="https://avatars.githubusercontent.com/u/62557968?v=4" alt="" />
-      <div className={styles.info}>
-        <h2>Rodrigo Marques</h2>
-        <p>Meu nome é Rodrigo, Aluno da Origamid, cod3r, Keyde</p>
-        <p>
-          <strong>Username:</strong> rodrigomsrocha
-        </p>
-        <p>
-          <strong>Followers:</strong> 11
-        </p>
-        <p>
-          <strong>Repos:</strong> 11
-        </p>
-      </div>
+      {data ? (
+        <>
+          <img src={data.avatar_url} alt={data.login} />
+          <div className={styles.info}>
+            <h2>{data.name}</h2>
+            <p>{data.bio}</p>
+            <p>
+              <strong>Username:</strong> {data.login}
+            </p>
+            <p>
+              <strong>Followers:</strong> {data.followers}
+            </p>
+            <p>
+              <strong>Repos:</strong> {data.public_repos}
+            </p>
+          </div>
+        </>
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 };
