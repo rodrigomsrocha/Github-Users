@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  justify-content: center;
   padding: 1rem;
   border: 1px solid #21262d;
   border-radius: 4px;
@@ -9,6 +10,7 @@
     border-radius: 50%;
   }
   .info {
+    flex: 1;
     margin-left: 2rem;
     color: #f0f6fc;
     h2 {

@@ -1,8 +1,9 @@
 import React from "react";
+
 import UserInfo from "./UserInfo";
+import ReposInfo from "./ReposInfo";
 
 import styles from "./styles/index.module.scss";
-import ReposInfo from "./ReposInfo";
 
 const Main = () => {
   return (

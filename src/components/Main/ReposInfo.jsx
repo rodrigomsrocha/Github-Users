@@ -1,19 +1,23 @@
 import React from "react";
+import Loading from "../Loading/index";
+
+import { UsernameContext } from "../../context/UsernameContext";
+
+import { useFetch } from "../../hooks/useFetch";
 
 import styles from "./styles/RepoInfo.module.scss";
 
 const ReposInfo = () => {
-  const [repos, setRepos] = React.useState([]);
+  const { username } = React.useContext(UsernameContext);
+  const { data } = useFetch(`https://api.github.com/users/${username}/repos`);
 
-  React.useEffect(() => {
-    fetch("http://localhost:3333/repos")
-      .then((res) => res.json())
-      .then((data) => setRepos([...data]));
-  }, []);
+  if (!data) {
+    return <Loading />;
+  }
 
-  console.log(repos);
+  const principalRepos = data.slice(0, 4);
 
-  return repos.map((repo) => (
+  return principalRepos.map((repo) => (
     <div key={repo.id} className={styles.container}>
       <a href={repo.html_url}>
         <h3>{repo.name}</h3>
