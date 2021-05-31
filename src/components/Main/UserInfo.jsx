@@ -7,7 +7,7 @@ import styles from "./styles/UserInfo.module.scss";
 
 const UserInfo = () => {
   const { username } = React.useContext(UsernameContext);
-  const { data } = useFetch(`https://api.github.com/users/${username}`);
+  const { data } = useFetch(`${username}`);
 
   return (
     <div className={styles.container}>

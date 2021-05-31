@@ -9,7 +9,7 @@ import styles from "./styles/RepoInfo.module.scss";
 
 const ReposInfo = () => {
   const { username } = React.useContext(UsernameContext);
-  const { data } = useFetch(`https://api.github.com/users/${username}/repos`);
+  const { data } = useFetch(`${username}/repos`);
 
   if (!data) {
     return <Loading />;
