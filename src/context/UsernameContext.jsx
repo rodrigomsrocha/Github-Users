@@ -4,7 +4,7 @@ export const UsernameContext = React.createContext();
 
 export const UsernameStorage = ({ children }) => {
   const [value, setValue] = React.useState("");
-  const [username, setUsername] = React.useState("rodrigomsrocha");
+  const [username, setUsername] = React.useState("");
 
   function updateSearch(inputValue) {
     setValue(inputValue);
